@@ -21,7 +21,8 @@
 package org.videolan.libvlc;
 
 import android.net.Uri;
-import android.support.annotation.Nullable;
+
+import androidx.annotation.Nullable;
 
 import org.videolan.libvlc.util.AndroidUtil;
 import org.videolan.libvlc.util.HWDecoderUtil;
@@ -411,8 +412,8 @@ public class Media extends VLCObject<Media.Event> {
     private Uri mUri = null;
     private MediaList mSubItems = null;
     private int mParseStatus = PARSE_STATUS_INIT;
-    private final String mNativeMetas[] = new String[Meta.MAX];
-    private Track mNativeTracks[] = null;
+    private final String[] mNativeMetas = new String[Meta.MAX];
+    private Track[] mNativeTracks = null;
     private long mDuration = -1;
     private int mState = -1;
     private int mType = -1;

@@ -25,8 +25,9 @@ import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.net.Uri;
 import android.os.Build;
-import android.support.annotation.NonNull;
 import android.util.Log;
+
+import androidx.annotation.NonNull;
 
 import org.videolan.libvlc.LibVLC;
 import org.videolan.libvlc.Media;
@@ -34,7 +35,6 @@ import org.videolan.libvlc.Media;
 import java.io.BufferedReader;
 import java.io.Closeable;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.RandomAccessFile;
@@ -508,7 +508,7 @@ public class VLCUtil {
      * Therefore, decode the characters authorized by Android Uri when creating an Uri from VLC.
      */
     public static Uri UriFromMrl(String mrl) {
-        final char array[] = mrl.toCharArray();
+        final char[] array = mrl.toCharArray();
         final StringBuilder sb = new StringBuilder(array.length*2);
         for (int i = 0; i < array.length; ++i) {
             final char c = array[i];

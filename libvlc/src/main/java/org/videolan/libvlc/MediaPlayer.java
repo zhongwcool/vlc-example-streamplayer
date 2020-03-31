@@ -33,8 +33,9 @@ import android.media.AudioFormat;
 import android.media.AudioManager;
 import android.net.Uri;
 import android.os.Build;
-import android.support.annotation.RequiresApi;
 import android.util.SparseArray;
+
+import androidx.annotation.RequiresApi;
 
 import org.videolan.libvlc.util.AndroidUtil;
 import org.videolan.libvlc.util.VLCUtil;
@@ -137,7 +138,8 @@ public class MediaPlayer extends VLCObject<MediaPlayer.Event> {
         private static class Flags {
             public static final int MENU = 0x01;
             public static final int INTERACTIVE = 0x02;
-        };
+        }
+
         /**
          * duration in milliseconds
          */
@@ -416,7 +418,7 @@ public class MediaPlayer extends VLCObject<MediaPlayer.Event> {
         }
     }
 
-    private long getEncodingFlags(int encodings[]) {
+    private long getEncodingFlags(int[] encodings) {
         if (encodings == null)
             return 0;
         long encodingFlags = 0;
@@ -816,7 +818,7 @@ public class MediaPlayer extends VLCObject<MediaPlayer.Event> {
         if (!enabled) {
             setVideoTrack(-1);
         } else if (getVideoTrack() == -1) {
-            final TrackDescription tracks[] = getVideoTracks();
+            final TrackDescription[] tracks = getVideoTracks();
 
             if (tracks != null) {
                 for (TrackDescription track : tracks) {
