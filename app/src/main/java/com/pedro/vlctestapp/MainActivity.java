@@ -8,10 +8,13 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
 import com.pedro.vlc.VlcListener;
 import com.pedro.vlc.VlcVideoLibrary;
-import java.util.Arrays;
+
 import org.videolan.libvlc.MediaPlayer;
+
+import java.util.Arrays;
 
 /**
  * Created by pedro on 25/06/17.
@@ -29,10 +32,10 @@ public class MainActivity extends AppCompatActivity implements VlcListener, View
     super.onCreate(savedInstanceState);
     getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
     setContentView(R.layout.activity_main);
-    SurfaceView surfaceView = (SurfaceView) findViewById(R.id.surfaceView);
-    bStartStop = (Button) findViewById(R.id.b_start_stop);
+    SurfaceView surfaceView = findViewById(R.id.surfaceView);
+    bStartStop = findViewById(R.id.b_start_stop);
     bStartStop.setOnClickListener(this);
-    etEndpoint = (EditText) findViewById(R.id.et_endpoint);
+    etEndpoint = findViewById(R.id.et_endpoint);
     vlcVideoLibrary = new VlcVideoLibrary(this, this, surfaceView);
     vlcVideoLibrary.setOptions(Arrays.asList(options));
   }
